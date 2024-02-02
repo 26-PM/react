@@ -1,9 +1,15 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  // Use ref
+  const a = useRef(0)
   
+
+
+
   // Runs on first render
   useEffect(() => {
     alert("I run on first render.")
@@ -16,9 +22,15 @@ function App() {
 
   // Runs on every render
   useEffect(() => {
-    alert("I run on every render.")
+    a.current=a.current+1;
+    alert(`I run on every render`);
+    // Use Ref
+    console.log(`Value of a is ${a.current}`);
   })
 
+
+
+  
   return (
     <>
     <div className="counter">
