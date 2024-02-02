@@ -6,6 +6,9 @@ function App() {
 
   // Use ref
   const a = useRef(0)
+
+  // Second Case - to prevent dom manipulation
+  const btnRef = useRef()
   
 
 
@@ -13,6 +16,7 @@ function App() {
   // Runs on first render
   useEffect(() => {
     alert("I run on first render.")
+    btnRef.current.style.backgroundColor="orangered"
   }, [])
 
   // Runs when count state is changed
@@ -30,13 +34,13 @@ function App() {
 
 
 
-  
+
   return (
     <>
     <div className="counter">
       Value of counter = {count}
     </div>
-    <button onClick={()=>{
+    <button ref={btnRef} onClick={()=>{
       setCount(count+1);
     }}>Update Count</button>
     </>
