@@ -31,3 +31,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 <RouterProvider router={router}></RouterProvider>
 
 
+
+
+# When state is changed in react whole app component is re-rendered.
